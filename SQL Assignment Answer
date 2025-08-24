@@ -1,0 +1,15 @@
+SELECT * FROM Customers WHERE city = "Kuala Lumpur";
+
+SELECT c.name AS customer_name, p.name AS product_name, o.quantity , (o.quantity * p.price) AS total_price FROM Orders o JOIN Customers c On o.customer_id = c.customer_id JOIN Products p ON o.product_id = p.product_id;
+
+SELECT * FROM Orders WHERE order_date BETWEEN '2024-03-01' AND '2024-03-31';
+
+SELECT product_id, SUM(quantity) AS total_quantity_sold FROM Orders GROUP BY product_id;
+
+SELECT p.category, SUM(o.quantity * p.price) AS total_revenue FROM Orders o JOIN Products p ON o.product_id = p.product_id GROUP BY p.category
+
+INSERT INTO Products (name, category, price) VALUES ('Bluetooth Speaker', 'Electronics', 150.00);
+
+UPDATE Products SET price = 135.00 WHERE name = 'Bluetooth Speaker';
+
+SELECT c.customer_id, c.name SUM(o.quantity * p.price) AS total_spent FROM Orders o JOIN Customers c ON o.customer_id = c.customer_id JOIN Products p ON o.product_id = p.product_id GROUP BY c.custonmer_id, c.name ORDER BY total_spent DESC LIMIT 3;
