@@ -16,8 +16,3 @@ This is a React TypeScript application featuring a responsive login and registra
 2. Install dependencies: `yarn install`
 3. Start the development server: `yarn start`
 4. Open [http://localhost:3333](http://localhost:3333) to view it in the browser
-
-## Screenshots
-
-![Login Page](screenshots/login.png)
-![Registration Page](screenshots/register.png)
